@@ -1,9 +1,11 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Static, DirectoryTree
+from textual.widgets import Static, DirectoryTree, RichLog
+
+class TerminalView(RichLog):
+    pass
 
 class FolderTree(DirectoryTree):
     pass
-
 
 class CodeEditor(Static):
 
@@ -32,22 +34,30 @@ class ArduinoTUI(App):
     
     CSS = """
     CodeEditor {
-        border: round #4FC7FF; /* Gives you the rounded outline */
-        dock: right;           /* Snaps the widget to the top right */
-        width: 80%;            /* Makes it take up 70% of the screen */
-        height: 75%;           /* Makes it stretch 75% of screen*/
+        background: $surface;
+        border: round #4FC7FF;           
+        height: 100%;           
     }
 
     FolderTree {
-        border: round #4FC7FF; /* Gives you the rounded outline */
-        dock: left;            /* Snaps the widget to the top right */
-        width: 20%;            /* Makes it take up 70% of the screen */
-        height: 75%;           /* Makes it stretch 75% of screen*/
+        background: $surface;
+        border: round #4FC7FF; 
+        dock: left;          
+        width: 20%;           
+        height: 77%;           
+    }
+
+    TerminalView {
+        background: $surface;
+        border: round #F54927; 
+        dock: bottom;          
+        width: 100%;           
+        height: 25%;           
     }
     """
     
     BINDINGS = [
-        ("d", "toggle_dark_mode", "Toggle dark mode")
+        # ("d", "toggle_dark_mode", "Toggle dark mode")
         # ("b", "toggle_FolderTree", "Toggle folder tree view")
     ]
 
@@ -55,14 +65,18 @@ class ArduinoTUI(App):
 
         yield CodeEditor("Select a file to view code") 
         yield FolderTree("./")
+        yield TerminalView()
 
+    ''' 
     def action_toggle_dark_mode(self):
         if self.theme == "textual-dark":
             self.theme = "textual-light"
 
         else:
             self.theme = "textual-dark"
+    '''
 
+    # catch the path returned by FolderTree class and pass to CodeEditor
     def on_directory_tree_file_selected(self, event : DirectoryTree.FileSelected):
         new_file_path = event.path
         editor_widgets = self.query_one(CodeEditor)
