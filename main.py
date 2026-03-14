@@ -1,5 +1,6 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Static, DirectoryTree, RichLog
+from textual.events import Key
 
 class TerminalView(RichLog):
     pass
@@ -31,7 +32,9 @@ class CodeEditor(Static):
 
 # Main app class
 class ArduinoTUI(App):
-    
+
+    command_mode : bool = False
+
     CSS = """
     CodeEditor {
         background: $surface;
@@ -79,10 +82,22 @@ class ArduinoTUI(App):
     # catch the path returned by FolderTree class and pass to CodeEditor
     def on_directory_tree_file_selected(self, event : DirectoryTree.FileSelected):
         new_file_path = event.path
-        editor_widgets = self.query_one(CodeEditor)
+        editor_widgets : CodeEditor = self.query_one(CodeEditor)
         editor_widgets.load_new_path(new_file_path)
 
 
+    def on_key(self, event : Key ):
+        if event.character == ":" :
+            command_mode : bool = True
+
+        if command_mode and event.character == "q":
+            self.exit()
+
+    
+    command_mode : bool = False
+
+
+
 if __name__ == "__main__":
-    app = ArduinoTUI()
+    app : ArduinoTUI = ArduinoTUI()
     app.run()
