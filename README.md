@@ -6,7 +6,7 @@ A lightning-fast, terminal-based User Interface for Arduino development, heavily
 * **LazyVim Dashboard:** A clean, keyboard-centric home screen.
 * **Live File Tree:** Navigate your sketch directories directly in the terminal.
 * **Built-in Editor Viewer:** Instantly view `.ino` and `.cpp` files.
-* **Board Management:** Detect and lets the use select Arduino board.
+* **Board Management:** Detect and lets the user select Arduino board.
 * **Real-time Compilation & Uploading:** Streams `arduino-cli` output directly into the TUI without freezing the app.
 * **Vim-style Command Palette:** Use `:` to trigger actions seamlessly.
 
