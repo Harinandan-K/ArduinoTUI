@@ -18,7 +18,7 @@ A lightning-fast, terminal-based User Interface for Arduino development, heavily
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/ArduinoTUI.git](https://github.com/YOUR_USERNAME/ArduinoTUI.git)
+   git clone https://github.com/Harinandan-K/ArduinoTUI.git
    cd ArduinoTUI
    ```
 
