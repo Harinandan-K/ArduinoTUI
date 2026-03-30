@@ -1,4 +1,3 @@
-```markdown
 # ⚡ ArduinoTUI
 
 A lightning-fast, terminal-based User Interface for Arduino development, heavily inspired by the aesthetics of LazyVim. Built with Python and Textual.
@@ -47,7 +46,7 @@ A lightning-fast, terminal-based User Interface for Arduino development, heavily
 * `:u` - Upload the current sketch to the selected board
 * `:h` - Return to the home screen
 * `:q` - Quit the application
-```
+
 
 
 
