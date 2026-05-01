@@ -1,8 +1,8 @@
-# ⚡ ArduinoTUI
+# ArduinoTUI
 
 A lightning-fast, terminal-based User Interface for Arduino development, heavily inspired by the aesthetics of LazyVim. Built with Python and Textual.
 
-## ✨ Features
+## Features
 * **LazyVim Dashboard:** A clean, keyboard-centric home screen.
 * **Live File Tree:** Navigate your sketch directories directly in the terminal.
 * **Built-in Editor Viewer:** Instantly view `.ino` and `.cpp` files.
@@ -10,11 +10,11 @@ A lightning-fast, terminal-based User Interface for Arduino development, heavily
 * **Real-time Compilation & Uploading:** Streams `arduino-cli` output directly into the TUI without freezing the app.
 * **Vim-style Command Palette:** Use `:` to trigger actions seamlessly.
 
-## 🛠️ Prerequisites
+## Prerequisites
 1. **Python 3.8+**
 2. **[arduino-cli](https://arduino.github.io/arduino-cli/latest/)**: Must be installed and available in your system's PATH.
 
-## 🚀 Installation
+## Installation
 
 1. Clone the repository:
    ```bash
@@ -32,7 +32,7 @@ A lightning-fast, terminal-based User Interface for Arduino development, heavily
    python main.py
    ```
 
-## ⌨️ Hotkeys
+## Hotkeys
 | Key | Action |
 | :--- | :--- |
 | `f` | Open Editor / Find file |
